@@ -11,15 +11,16 @@ Polynomial is used to represent the complete equation. It also exposes static me
 
 ## Download & setup
 
-### You need to: 
+- clone the repository
 ```
-- clone the repo using - **git clone git@github.com:filswa/polynomial.git**
-- have node.js environment installed locally
+git clone git@github.com:filswa/polynomial.git
 ```
 
-### Installing
+- ensure you have node.js runtime environment installed
+
+- install required dependencies
 ```
-run **npm install** in node.js command prompt
+npm install
 ```
 
 ## Running the tests
@@ -32,8 +33,10 @@ To run existing test suite
 You can add your own testcases using the template at the end of sum.test.js file
 
 ## Running 
-You can also run the code outside jest by executing **node index.js**
+You can also run the code outside jest by executing
+```
+node index.js
+```
 
 This allows to create, add and log polynomials - using the methods described in description
-
 You can find an example code in index.js
