@@ -27,7 +27,7 @@ npm install
 To run existing test suite
 
 ```
-**npm test**
+npm test
 ```
 
 You can add your own testcases using the template at the end of sum.test.js file
