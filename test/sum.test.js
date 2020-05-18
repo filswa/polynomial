@@ -198,7 +198,6 @@ test('tc12 - test Polynomial.add - expect sum of add to be zero', () => {
 
 	const result = Polynomial.add(poly1, poly2);
 	
-	console.log(`${poly1.getString()}(+) ${poly2.getString()}= ${result.getString()}`);	
 	expect(result).toEqual(expected)
 })
 
