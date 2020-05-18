@@ -1,11 +1,13 @@
+const _ = require('lodash')
+
 class Polynomial {
   constructor(...monomials){
     this.polynomial = monomials;
   }
 
   static add(p1, p2){
-    let poly1 = [...p1.polynomial];
-    let poly2 = [...p2.polynomial];
+    let poly1 = _.cloneDeep(p1.polynomial);
+    let poly2 = _.cloneDeep(p2.polynomial);
 
     if(poly1.length === 0) return new Polynomial(...poly2);
     if(poly2.length === 0) return new Polynomial(...poly1);
@@ -20,7 +22,7 @@ class Polynomial {
       })
 
     let added = [...poly1, ...poly2]
-    
+
     let unique = [...new Set(added)];
 
     unique.sort((first, second) => {
@@ -32,12 +34,10 @@ class Polynomial {
     return new Polynomial(...unique);
   }
 
-  // Returns string representation of a polynomial
-  // Todo: solve usage problems with jest (function call returns error "print is not a function")
   getString(){
     const poly = [...this.polynomial]
     let polyString = poly.reduce((acc, val) => {
-      let isPositive = Math.sign(val.constant) === 1 ? true : false;
+      let isPositive = Math.sign(val.constant) >= 0 ? true : false;
       if(val.exponent <= 1){
         if(val.variable === ""){
           return acc += `${isPositive ? '+' : ''}${val.constant} `
